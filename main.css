@@ -268,7 +268,7 @@ header .category span {
   align-items: center;
   background-color: #f6f6f6;
   margin: 20px auto;
-  gap: 10px;
+  gap: 6px;
   flex-wrap: wrap;
   padding: 20px;
 }
@@ -303,6 +303,13 @@ header .category span {
   top: 50%;
   transform: translate(-50%, -50%);
 }
+@media (max-width: 767px) {
+  .letters-guess span {
+    width: 40px;
+    height: 50px;
+    font-size: 18px;
+  }
+}
 /* End letter-guess */
 
 /* Start End Game */
@@ -330,3 +337,13 @@ header .category span {
   font-weight: bold;
 }
 /* End End Game */
+
+@media (max-width: 767px) {
+  .contianer {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  header {
+    order: 1;
+  }
+}

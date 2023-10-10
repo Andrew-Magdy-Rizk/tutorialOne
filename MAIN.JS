@@ -116,6 +116,9 @@ document.addEventListener("click", (e) => {
     if (theStatus !== true) {
       wrongNumber++;
       theDrow.classList.add(`wrong-${wrongNumber}`);
+      document.getElementById("field").play();
+    } else {
+      document.getElementById("success").play();
     }
     if (wrongNumber === 8) {
       eleLetters.classList.add("finished");

@@ -171,7 +171,7 @@ function endGame() {
   let thepop = document.createElement("div");
   let textpop = document.createTextNode(`لقد خسرت الكلمة هى (${randomValue})`);
   let btnTry = document.createElement("a");
-  let textBtn = document.createTextNode("Try Agine");
+  let textBtn = document.createTextNode("Try Again");
   btnTry.appendChild(textBtn);
   thepop.className = "end-game";
   thepop.appendChild(textpop);
@@ -185,7 +185,7 @@ function successGame() {
   let thepop = document.createElement("div");
   let textpop = document.createTextNode(`لقد ربحت الكلمة هى (${randomValue})`);
   let btnTry = document.createElement("a");
-  let textBtn = document.createTextNode("Try Agine");
+  let textBtn = document.createTextNode("Try Again");
   btnTry.appendChild(textBtn);
   thepop.className = "end-game";
   thepop.appendChild(textpop);

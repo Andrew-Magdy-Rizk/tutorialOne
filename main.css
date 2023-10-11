@@ -271,6 +271,7 @@ header .category span {
   gap: 6px;
   flex-wrap: wrap;
   padding: 20px;
+  flex-direction: row-reverse;
 }
 
 .letters-guess span {

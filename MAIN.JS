@@ -1,5 +1,5 @@
 // Writing Letters
-let letters = "abcdefghijklmnopqrstuvwxyz";
+let letters = "ابتثجحخدذرزسشصضطظعغفقكلمنهويةئ";
 // Get Element Letters
 let eleLetters = document.querySelector(".letters");
 // Create Array From Letters
@@ -19,29 +19,53 @@ arrLetters.forEach((e) => {
 
 //create object to words secret
 const words = {
-  programming: ["php", "javascript", "java", "python", "mysql", "sql"],
-  countries: [
-    "egypt",
-    "yemen",
-    "qatar",
-    "Algeria",
-    "Australia",
-    "Canada",
-    "China",
+  اكلة: [
+    "برجر",
+    "ام علي",
+    "طعمية",
+    "خبيزه",
+    "مكرونه بشاميل",
+    "كوسه بشاميل",
+    "مسقعه",
+    "كفته",
+    "كوارع",
+    "شكشوكه",
+    "باميه",
+    "كوسه",
   ],
-  famous: [
-    "Hassan Hosni",
-    "Hassan Mustafa",
-    "Hassan Youssef",
-    "Hussein Ismail",
-    "Ahmed Badir",
+  بلاد: [
+    "مصر",
+    "امريكا",
+    "سودان",
+    "اليابان",
+    "السعودية",
+    "استراليا",
+    "الصين",
+    "الارجنتين",
+    "بلجيكا",
+    "البرازيل",
+    "كندا",
+    "جزر القمر",
   ],
-  movies: [
-    "The Gray man",
-    "Oppenheimer",
-    "John Wick",
-    "Spider Man",
-    "Fast and Furious",
+  ممثلين: [
+    "خالد النبوي",
+    "يوسف الشريف",
+    "هانى رمزي",
+    "رامز جلال",
+    "محمد رمضان",
+    "احمد السقه",
+    "عبدالحليم",
+  ],
+  افلام: [
+    "اكس لارج",
+    "ابى فوق الشجرة",
+    "واحد تاني",
+    "بحبك",
+    "الجزيرة",
+    "غش الزوجية",
+    "الحرامي و العبيط",
+    "هي فوضي",
+    "كلاشنكوف",
   ],
 };
 
@@ -112,6 +136,9 @@ document.addEventListener("click", (e) => {
         let empBox = document.querySelectorAll(".letters-guess span");
         empBox[index].innerHTML = letterClick;
       }
+      if (wordletter === " ") {
+        thesucss++;
+      }
     });
     if (theStatus !== true) {
       wrongNumber++;
@@ -124,11 +151,14 @@ document.addEventListener("click", (e) => {
       eleLetters.classList.add("finished");
       endGame();
     }
+    // Chake the All Box Guess
     allGuess.forEach((e) => {
       if (e.innerHTML !== "") {
         thesucss++;
       }
     });
+    console.log(thesucss);
+    // Get if you Finished
     if (thesucss === arrayletters.length) {
       eleLetters.classList.add("finished");
       successGame();
@@ -136,11 +166,10 @@ document.addEventListener("click", (e) => {
   }
 });
 
+// Create Pop Up When lose
 function endGame() {
   let thepop = document.createElement("div");
-  let textpop = document.createTextNode(
-    `Game Over, the word is ${randomValue}`
-  );
+  let textpop = document.createTextNode(`لقد خسرت الكلمة هى (${randomValue})`);
   let btnTry = document.createElement("a");
   let textBtn = document.createTextNode("Try Agine");
   btnTry.appendChild(textBtn);
@@ -151,11 +180,10 @@ function endGame() {
   btnTry.href = "";
 }
 
+// Create Pop Up When Win
 function successGame() {
   let thepop = document.createElement("div");
-  let textpop = document.createTextNode(
-    `Game Success, the word is ${randomValue}`
-  );
+  let textpop = document.createTextNode(`لقد ربحت الكلمة هى (${randomValue})`);
   let btnTry = document.createElement("a");
   let textBtn = document.createTextNode("Try Agine");
   btnTry.appendChild(textBtn);
